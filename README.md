@@ -9,8 +9,8 @@
 2. 国内用户编译前最好准备好梯子
 3. 默认登陆IP 192.168.1.1, 密码 password
 4. 服务器建立普通用户账号权限赋予方法
-    adduser username
-    usermod -aG sudo username
+   # adduser username
+   # usermod -aG sudo username
 编译命令如下:
 -
 1. 首先装好 Ubuntu 64bit，推荐  Ubuntu  18 LTS x64
