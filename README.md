@@ -1,6 +1,6 @@
-欢迎来到Lean的Openwrt源码仓库！
+欢迎来到GuoLede的Openwrt源码仓库！
 =
-Welcome to Lean's  git source of OpenWrt and packages
+本仓库来源于L大，仅以此感谢！
 =
 中文：如何编译自己需要的 OpenWrt 固件
 -
