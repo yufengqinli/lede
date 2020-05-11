@@ -56,8 +56,10 @@ make -j$(($(nproc) + 1)) V=s
 ```
 
 编译完成后输出路径：/GuoLede/bin/targets
+ 
  也可以将/GuoLede/bin 文件夹打包，所有的ipk文件都会下载到本地电脑中
- 命令 tar -czvf bin.tar.gz bin
+
+命令 tar -czvf bin.tar.gz bin
 
 特别提示：
 ------
