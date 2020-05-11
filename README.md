@@ -9,8 +9,8 @@
 2. 国内用户编译前最好准备好梯子
 3. 默认登陆IP 192.168.1.1, 密码 password
 4. 服务器建立普通用户账号权限赋予方法
-   # adduser username
-   # usermod -aG sudo username
+   创建用户命令： adduser username
+   赋予sudo权限：usermod -aG sudo username
 编译命令如下:
 -
 1. 首先装好 Ubuntu 64bit，推荐  Ubuntu  18 LTS x64
@@ -23,7 +23,9 @@ sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git
 3. 使用 `git clone https://github.com/aepub/GuoLede` 命令下载好源代码，然后 `cd GuoLede` 进入目录
 
 4. chmod a+x prepareCompile.sh
+
    执行批处理命令：./prepareCompile.sh
+   
    按需选择：make menuconfig
 
 5. `make -j8 download V=s` 下载dl库（国内请尽量全局科学上网）
