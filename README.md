@@ -64,17 +64,6 @@ make -j$(($(nproc) + 1)) V=s
 1.源代码中绝不含任何后门和可以监控或者劫持你的 HTTPS 的闭源软件，SSL 安全是互联网最后的壁垒。安全干净才是固件应该做到的；
 
 
-
-### Alipay 支付宝
-
-![alipay](doc/alipay_donate.jpg)
-
-### Wechat 微信
-
-![wechat](doc/wechat_donate.jpg)
-
-------
-
 English Version: How to make your Openwrt firmware.
 -
 Note:
