@@ -25,12 +25,12 @@ sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git
 
 3. 使用 `git clone https://github.com/aepub/GuoLede` 命令下载好源代码，然后 `cd GuoLede` 进入目录
 
-4. chmod a+x prepareCompile.sh
+4.   ./scripts/feeds update -a
 
-   执行批处理命令：./prepareCompile.sh
+     ./scripts/feeds install -a
+     
+      make menuconfig
    
-   按需选择：make menuconfig
-
 5. `make -j8 download V=s` 下载dl库（国内请尽量全局科学上网）
 
 
