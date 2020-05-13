@@ -7,7 +7,7 @@
 -
 1. **不**要用 **root** 用户 git 和编译！！！
 2. 国内用户编译前最好准备好梯子
-3. 默认登陆IP 192.168.1.1, 密码 password
+3. 默认登陆IP 192.168.50.1, 密码 password
 4. 服务器建立普通用户账号权限赋予方法
   
   创建用户命令： adduser username
@@ -33,8 +33,15 @@ sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git
    
 5. `make -j8 download V=s` 下载dl库（国内请尽量全局科学上网）
 
+6. 防止窗口关闭后编译程序推出，启动窗口管理器
 
-6. 输入 `make -j1 V=s` （-j1 后面是线程数。第一次编译推荐用单线程）即可开始编译你要的固件了。
+   1）、建立窗口：screen -S 888  (窗口名称888）
+   
+   2）、查看运行的窗口： screen -ls
+   
+   3）、进入创建的窗口： screen -r 窗口号 
+
+7. 输入 `make -j1 V=s` （-j1 后面是线程数。第一次编译推荐用单线程）即可开始编译你要的固件了。
 
 本套代码保证肯定可以编译成功。里面包括了 R20 所有源代码，包括 IPK 的。
 
