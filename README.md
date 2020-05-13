@@ -33,7 +33,7 @@ sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git
    
 5. `make -j8 download V=s` 下载dl库（国内请尽量全局科学上网）
 
-6. 防止窗口关闭后编译程序推出，启动窗口管理器
+6. 防止窗口关闭后编译程序退出，建议启动窗口管理器
 
    1）、建立窗口：screen -S 888  (窗口名称888）
    
