@@ -1,0 +1,192 @@
+==================第一部分=====================
+# HomeLede 版本说明
++ 基于Lede OpenWrt 版本及来自Lienol软件包
++ 结合家庭x86软路由场景需要定制了软件包
+
+对家庭路由高频功能进行了测试（x86软路由），保证可用。
+
+## 家庭路由场景功能
++ 支持UPnP
++ 支持CIFS文件共享协议，挂载NAS、Samba、Windows文件夹
++ 支持单线多拨
++ 支持多拨负载均衡
++ 支持DNS去广告 + 去污染 + 最优访问速度筛选
++ 支持DDNS，可以通过域名随时获得家庭路由器IP
++ 支持SSH远程访问
++ 支持远程唤醒（WOL）
++ 支持定时唤醒（Time WOL）
++ 支持全功能Docker，可自由扩展功能（FQ）
++ 支持SSH远程访问
++ 支持SFTP，可通过常见SSH客户端随意传输文件
++ 安装OpenVMTools，优化在虚拟化环境运行速度
++ 支持百度网盘远程下载
++ 提供视觉效果较好的皮肤
++ 支持透明出国
+
+
+感谢Lead，Lienol，CTCGFW等等作者。
+
+PS：去广告综合解决方案使用方法请见 https://www.cnblogs.com/zlAurora/p/12433266.html
+
+==================第二部分=================
+
+中文：如何编译自己需要的 OpenWrt 固件
+
+注意：
+1. 不要用 root 用户 git 和编译！！！
+2. 国内用户编译前最好准备好梯子
+3. 默认登陆IP 192.168.1.1, 密码 password
+
+编译命令如下:
+
+1. 首先装好 Ubuntu 64bit，推荐  Ubuntu  14 LTS x64
+
+2. 命令行输入 sudo apt-get update ，然后输入
+sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3.5 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib linux-libc-dev:i386
+
+3. git clone https://github.com/xiaoqingfengATGH/HomeLede.git homeLede命令下载好源代码，然后 cd homeLede 进入目录
+
+4.  ./prepareCompile.sh
+
+5.  make menuconfig 
+
+6. 最后选好你要的路由，输入 make -j1 V=s （-j1 后面是线程数。第一次编译推荐用单线程，国内请尽量全局科学上网）即可开始编译你要的固件了。
+
+本套代码保证肯定可以编译成功。里面包括了 R9 所有源代码，包括 IPK 的。
+
+去广告订阅地址默认内置来自以下源，如有去广告的误杀漏杀问题可以到这里报告：
+
+https://github.com/privacy-protection-tools/anti-AD
+
+
+--------------我的文件说明----------
+
+Welcome to Lean's  git source of OpenWrt and packages
+
+中文：如何编译自己需要的 OpenWrt 固件
+
+注意：
+1. 不要用 root 用户 git 和编译！！！
+2. 国内用户编译前最好准备好梯子
+3. 默认登陆IP 192.168.1.1, 密码 password
+
+编译命令如下:
+
+1. 首先装好 Ubuntu 64bit，推荐  Ubuntu  14 LTS x64
+
+2. 命令行输入 sudo apt-get update ，
+然后输入
+sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib linux-libc-dev:i386
+
+3. git clone https://github.com/coolsnowwolf/lede 命令下载好源代码，然后 cd lede 进入目录
+
+4. ./scripts/feeds update -a 
+   ./scripts/feeds install -a
+    make menuconfig 
+
+5. 最后选好你要的路由，输入 make -j1 V=s （-j1 后面是线程数。第一次编译推荐用单线程，国内请尽量全局科学上网）即可开始编译你要的固件了。
+
+本套代码保证肯定可以编译成功。里面包括了 R9 所有源代码，包括 IPK 的。
+
+你可以自由使用，但源码编译二次发布请注明我的 GitHub 仓库链接。谢谢合作！
+
+特别提示：
+	1.源代码中绝不含任何后门和可以监控或者劫持你的 HTTPS 的闭源软件，SSL 安全是互联网最后的壁垒。安全干净才是固件应该做到的；
+	2.如有技术问题需要讨论，欢迎加入 QQ 讨论群：OP共享技术交流群 ,号码 297253733 ，加群链接: 点击链接加入群聊【OP共享技术交流群】：https://jq.qq.com/?_wv=1027&k=5yCRuXL
+	3. 想学习OpenWrt开发，但是摸不着门道？自学没毅力？基础太差？怕太难学不会？跟着佐大学OpenWrt开发入门培训班助你能学有所成
+	报名地址：http://forgotfun.org/2018/04/openwrt-training-2018.html
+
+=================Esir版本！===================
+
+如何编译自己需要的 OpenWrt 固件
+1. 不要Fork我这个repo，此repo不会实时更新，很可能缺少新功能或者留有未修复的BUG。
+2. 以下命令可以作为你搭建环境和编译的参考
+
+注意：
+
+不要 用 root 用户进行编译！！！
+国内用户编译前最好准备好梯子
+编译成功后，固件默认登陆IP 192.168.5.1, 用户名root，密码 password
+欢迎关注油管频道 eSir Playground 观看相关的教学视频，并订阅我的油管频道😊
+
+编译命令如下:
+
+首先装好 Ubuntu 64bit，推荐 Ubuntu 14 LTS x64
+命令行输入
+sudo apt-get update
+然后输入以下的命令搭建系统环境
+
+sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev patch unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex node-uglify gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx-ucl libelf-dev autoconf automake libtool autopoint device-tree-compiler libuv-dev
+
+如果你使用root执行了以上命令，那从此时开始，你必须使用非root权限用户进行后续操作
+
+下载好源代码
+git clone https://github.com/coolsnowwolf/lede
+然后进入lede目录（源码存在此目录，所以此目录即为buildroot目录）
+
+cd lede
+更新系统组件
+./scripts/feeds update -a 
+./scripts/feeds install -a
+如果已经成功编译过，再次编译时还要同步L大的代码
+
+git pull
+运行 make menuconfig入选单界面，选择CPU架构，型号，固件类型，所需插件及工具等，记得先Save 再退出
+make menuconfig 
+下载源码文件到buildroot录下的dl目录
+make download 
+查询下载文件是否完整  Ls ~/openwrt/dl/ -lSrh | less
+Q 退出
+
+正式开始编译，建议先运行screen命令守护进程，尤其是在VPS上编译时
+make V=s
+7-1. 如果你非常谨慎，也可以使用以下命令替换第7步的命令，来编译你的固件。-j 后面是线程数。第一次编译推荐用单线程，即 -j1，国内请尽量全局科学上网）
+
+make -j1 V=s
+
+================在服务器中进行第二次编译===========
+
+cd lede                                                                      # 进入LEDE目录
+git pull                                                                        # 同步更新大雕源码
+./scripts/feeds update -a && ./scripts/feeds install -a               # 更新Feeds
+rm -rf ./tmp && rm -rf .config                                    # 清除编译配置和缓存
+make menuconfig                                                       # 进入编译配置菜单
+make -jn V=99                                                       # 开始编译 n=线程数+1，例如4线程的I5填-j5 
+
+===============aepub自定义版本===============-
+
+一、Ubuntu赋予用户sudo权限
+建立普通用户：
+Useradd 或者 adduser
+sudo usermod -aG sudo  用户名
+
+二、编译集合passwall和ssr plus+版本
+1、sudo apt-get update
+2、sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev patch unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex node-uglify gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx-ucl libelf-dev autoconf automake libtool autopoint device-tree-compiler libuv-dev
+
+3、git clone --depth 1 https://github.com/Lienol/openwrt -b dev-lean-lede openwrt
+4、cd openwrt
+5、更新系统组件：
+./scripts/feeds update -a 
+./scripts/feeds install -a
+5、编译需要功能：
+      make menuconfig
+6、建立窗口，防止终端关闭后编译停止：
+   screen -S 888 #888为窗口编号
+   查询窗口：screen -ls
+   进入窗口：screen -r XXX  #888为ls出来的窗口号
+   退出当前窗口： Ctrl-A D
+   
+7、下载文件：make download
+   查询下载文件是否完整  Ls ~/openwrt/dl/ -lSrh | less
+   Q 推出
+   若文件大小小于1K，这该文件未下载成功，需要重新单独下载
+8、开始编译：make -jn V=99
+git clone https://github.com/aepub/Guolede
+
+-------------------网络来源版---------------
+
+https://www.right.com.cn/forum/thread-3416292-1-1.html
+git地址：
+https://github.com/xiaoqingfengATGH/HomeLede
+编译方法如上，带passwall和srr版
