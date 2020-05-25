@@ -1,6 +1,6 @@
 欢迎来到GuoLede的Openwrt源码仓库！
 =
-本仓库来源于L大，向高手致敬，本编译版本仅是保存以防失联！！
+本仓库来源于L大，并增加了不可描述之三剑客，向高手致敬，本编译版本仅是保存以防失联！！
 =
 -
 注意：
@@ -32,6 +32,8 @@ sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git
       make menuconfig
    
 5. `make -j8 download V=s` 下载dl库（国内请尽量全局科学上网）
+    
+    下载完成后，查看dl文件夹，若有低于4K的文件，则需要单独下载覆盖之，否则编译会出错！
 
 6. 防止窗口关闭后编译程序退出，建议启动窗口管理器
 
@@ -45,8 +47,6 @@ sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git
 
 本套代码保证肯定可以编译成功。里面包括了 R20 所有源代码，包括 IPK 的。
 
-你可以自由使用，但源码编译二次发布请注明来源于L大及我的 GitHub 仓库链接。
-=
 
 二次编译：
 ```bash
