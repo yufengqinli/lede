@@ -1,4 +1,4 @@
-欢迎来到GuoLede的Openwrt源码仓库！本仓库来源于L大，
+欢迎来到yufengqinli/lede的Openwrt源码仓库！本仓库来源于Guo大，
 =
 向高手致敬，本编译版本仅保存以防失联！！
 =
@@ -23,7 +23,7 @@
 sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3.5 python2.7 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib antlr3 gperf
 `
 
-3. 使用 `git clone https://github.com/aepub/GuoLede` 命令下载好源代码，然后 `cd GuoLede` 进入目录
+3. 使用 `git clone https://github.com/yufengqinli/lede` 命令下载好源代码，然后 `cd lede` 进入目录
 
 4.   ./scripts/feeds update -a
 
@@ -65,9 +65,9 @@ make menuconfig
 make -j$(($(nproc) + 1)) V=s
 ```
 
-编译完成后输出路径：/GuoLede/bin/targets
+编译完成后输出路径：/lede/bin/targets
  
- 也可以将/GuoLede/bin 文件夹打包，所有的ipk文件都会下载到本地电脑中
+ 也可以将/lede/bin 文件夹打包，所有的ipk文件都会下载到本地电脑中
 
 命令 tar -czvf bin.tar.gz bin
 
